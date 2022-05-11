@@ -55,7 +55,7 @@ jobs:
         source halium.env
         mkdir -p $ANDROID_ROOT
         cd $ANDROID_ROOT
-        repo init -u git://github.com/Halium/android.git -b halium-11.0 --depth=1
+        repo init -u http://github.com/Halium/android.git -b halium-11.0 --depth=1
         repo sync -j8 -c --no-clone-bundle --no-tags
         cd $ANDROID_ROOT/halium/droidmedia
         git fetch https://github.com/peat-psuwit/droidmedia fix-raw-data
