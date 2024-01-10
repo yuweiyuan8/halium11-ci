@@ -20,10 +20,16 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@master
-    
+      
+    # Cleanup The Actions Workspace Using Custom Composite Run Actions
+    - name: Cleanup
+      uses: rokibhasansagar/slimhub_actions@main
+
     - name: Initialization environment
       run: |
-        sudo apt-get update
+        sudo df -h
+        sudo free -m \
+        sudo apt-get update \
         sudo apt-get install -y \
         openjdk-8-jdk android-tools-adb bc bison \
         build-essential curl flex g++-multilib gcc-multilib gnupg gperf \
